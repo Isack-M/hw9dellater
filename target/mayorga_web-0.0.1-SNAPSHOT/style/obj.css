@@ -1,0 +1,106 @@
+.obj {
+    background-color: #ffffff;
+    border: 2px solid #002244;
+    border-radius: 0.75rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 1.5rem;
+    margin: 1rem;
+    font-family: sans-serif;
+    width: 320px; 
+}
+
+.obj img {
+    width: 80%; 
+    max-width: 12rem;
+    aspect-ratio: 1 / 1;
+    object-fit: cover; 
+    border-radius: 0.5rem; 
+    margin-bottom: 1rem;
+    border: 2px solid #e0e0e0;
+}
+
+.obj h3 {
+    margin: 0.5rem 0;
+    color: #002244; 
+    font-size: 1.4rem;
+}
+
+.obj p {
+    color: #444444;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+}
+
+.obj .objControls {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed #cccccc;
+}
+
+.obj .instructionText {
+    font-size: 0.85rem;
+    color: #666666;
+    margin-bottom: 0.5rem;
+}
+
+.obj button, 
+.obj input {
+    width: 45%;
+    padding: 0.5rem;
+    margin: 0.2rem;
+    border-radius: 0.25rem;
+    box-sizing: border-box;
+    font-size: 0.9rem;
+}
+
+.obj input {
+    width: 48%; 
+    padding: 0.5rem;
+    border: 1px solid #cccccc;
+    border-radius: 0.25rem;
+    box-sizing: border-box;
+    font-size: 0.9rem;
+}
+
+.obj input, 
+.obj select {
+    width: 48%; 
+    padding: 0.5rem;
+    border: 1px solid #cccccc;
+    border-radius: 0.25rem;
+    box-sizing: border-box;
+    font-size: 0.9rem;
+}
+
+
+.obj button:hover {
+    background-color: #004080; 
+}
+
+.obj .errorMsgClass {
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
+
+.obj .inputLabel,
+.obj button {
+    background-color: #002244;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    width: 48%;
+    font-size: 0.9rem;
+    font-weight: bold;
+    box-sizing: border-box;
+    text-align: center;
+    display: inline-block;
+}
+
+.obj .controlRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}

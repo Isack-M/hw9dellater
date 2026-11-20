@@ -1,0 +1,11 @@
+.blog {
+    background-color: rgb(15, 25, 60);
+    padding: 1.5rem;
+    border-radius: 0.7rem;
+    margin-top: 1.5rem;
+}
+
+.blog h2, .blog h3 {
+    color: rgb(255, 170, 0); 
+    margin-top: 0;
+}

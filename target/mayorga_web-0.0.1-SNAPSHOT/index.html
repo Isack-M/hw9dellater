@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Peculiar Fishes</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="icons/more_icons/sad.png">
+
+    <!-- Your external style sheets -->
+    <link href="style/blog.css" rel="stylesheet" type="text/css" />
+    <link href="style/dropDown.css" rel="stylesheet" type="text/css" />
+    <link href="style/home.css" rel="stylesheet" type="text/css" />
+    <link href="style/main.css" rel="stylesheet" type="text/css" />
+    <link href="style/myDropDown.css" rel="stylesheet" type="text/css" />
+    <link href="style/obj_CGF.css" rel="stylesheet" type="text/css" />
+    <link href="style/obj.css" rel="stylesheet" type="text/css" />
+    <link href="style/clickSort.css" rel="stylesheet" type="text/css" />
+    <link href="style/insertArea.css" rel="stylesheet" type="text/css" />
+
+
+    <!-- Babel for JSX -->
+    <script crossorigin src="https://unpkg.com/@babel/standalone@7/babel.min.js"></script>
+
+    <!-- React and React Router Imports -->
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@19",
+        "react-dom/client": "https://esm.sh/react-dom@19/client",
+        "react-router-dom": "https://esm.sh/react-router-dom@6?deps=react@19"
+      }
+    }
+    </script>
+</head>
+
+<body>
+    <!-- React will inject the app into this root div -->
+    <div id="root"></div>
+
+    <!-- JS reusable files -->
+    <script src="_JS_reusable/dropDownFW.js"></script>
+    <script src="_JS_reusable/MakeObj.js"></script>
+    <script src="_JS_reusable/ajax_alt.js"></script>
+    <script src="_JS_reusable/filterObjList.js"></script>
+    <script src="_JS_reusable/jsSort.js"></script>
+    <script src="_JS_reusable/sortOrder.js"></script>
+
+    <!-- JS Content Generating functions -->
+    <script src="_JS_CGF/MakeObj_CGF.js"></script>
+
+    <!-- React reusable -->
+    <script type="text/babel" src="_React_reusable/ConvertEle.jsx"></script>
+
+    <!-- React Content Generating functions -->
+    <script type="text/babel" src="_React_CGF/HomeR.jsx"></script>
+    <script type="text/babel" src="_React_CGF/BlogR.jsx"></script>
+    <script type="text/babel" src="_React_CGF/UserFilterSortTable.jsx"></script>
+    <script type="text/babel" src="_React_CGF/ExoticFishFilterSortTable.jsx"></script>
+    <script type="text/babel" src="_React_CGF/ProfileView.jsx"></script>
+    <script type="text/babel" src="_React_CGF/Logon.jsx"></script>
+    <script type="text/babel" src="_React_CGF/Profile.jsx"></script>
+    <script type="text/babel" src="_React_CGF/Logoff.jsx"></script>
+    <script type="text/babel" src="_React_CGF/UserInsertOrUpdate.jsx"></script>
+    <script type="text/babel" src="_React_CGF/ExoticFishInsertOrUpdate.jsx"></script>
+
+    <!-- React Script to render the SPA -->
+    <script type="text/babel" data-type="module">
+
+        import React from "react";
+        import ReactDOM from "react-dom/client";
+        import { HashRouter, Routes, Route, NavLink } from "react-router-dom";
+
+        window.React = React;
+
+        // Initialize DropDown framework
+        dropDownFW({
+            dropHeaderStyle: "dropHeader",
+            dropContentStyle: "dropContent",
+            showStyle: "show",
+            hideStyle: "hide"
+        });
+
+        const App = () => (
+            <HashRouter>
+
+                <div id="titleNav">
+                    <div id="title">
+                        Peculiar Fishes
+                    </div>
+                    
+                    <div id="nav">
+                        <div className="dropDown">
+                            <NavLink to="/home">Home</NavLink>
+                        </div>
+                        
+                        <div className="dropDown">
+                            <div className="dropHeader">Account</div>
+                            <div className="dropContent">
+                                <NavLink to="/userInsert">Register</NavLink> <br />
+                                <NavLink to="/login">Log In</NavLink> <br />
+                                <NavLink to="/logout">Log Out</NavLink> <br />
+                                <NavLink to="/profile">Get Profile</NavLink> <br />
+                            </div>
+                        </div>
+
+                        <div className="dropDown">
+                            <div className="dropHeader">Search</div>
+                            <div className="dropContent">
+                                <NavLink to="/usersReact">User List</NavLink> <br />
+                                <NavLink to="/otherReact">Exotic Fish List</NavLink> <br />
+                            </div>
+                        </div>
+
+                        <div className="dropDown">
+                            <div className="dropHeader">Homework</div>
+                            <div className="dropContent">
+                                <NavLink to="/blog">Blog</NavLink> <br />
+                                <a target="_blank" href="docs/mayorga_database.pdf">My DB PDF</a> <br />
+                                <NavLink to="/myObj">JS Fish Objects</NavLink> <br />
+                                <a target="_blank" href="webUser/getAll">All Users Web API</a> <br />
+                                <a target="_blank" href="exoticFish/getAll">All Fish Web API</a> <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="content">
+                    <Routes>
+                        <Route path="/" element={<HomeR />} />
+                        <Route path="/home" element={<HomeR />} />
+                        <Route path="/myObj" element={<ConvertEle ele={MakeObj_CGF()} />} />
+                        <Route path="/blog" element={<BlogR />} />
+                        <Route path="/usersReact" element={<UserFilterSortTable />} />
+                        <Route path="/otherReact" element={<ExoticFishFilterSortTable />} />
+                        <Route path="/userInsert" element={<UserInsertOrUpdate />} />
+                        <Route path="/fishInsert" element={<ExoticFishInsertOrUpdate />} />
+                        <Route path="/login" element={<Logon />} />
+                        <Route path="/profile" element={<Profile />} />
+                        <Route path="/logout" element={<Logoff />} />
+                    </Routes>
+                </div>
+
+                <div id="footer">
+                    Isack Mayorga
+                </div>
+
+            </HashRouter>
+        );
+
+        const myRoot = ReactDOM.createRoot(document.getElementById("root"));
+        myRoot.render(<App />);
+
+    </script>
+</body>
+</html>
