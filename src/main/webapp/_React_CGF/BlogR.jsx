@@ -52,6 +52,9 @@ function BlogR() {
 
             <h3>HW 8 Insert</h3>
             <p>I'd say incorperating all the sample code was the hardest part. It got a bit messy trying to organize all the files but having them set up from the sample code and previous lab helped a lot. Displaying the data was probably the easiest part because I set up everything in the previous lab. The most interesting thing from this module was learning how dropdown menus can get info from the db.</p>
+
+            <h3>HW 9 Update</h3>
+            <p>This module was fairly simple. The hardest part was probably making sure that all the ajax calls were properly loading because I had some things named differently in my lab 9 code. The easiest part was implementing the RequestMappings for update and getById thanks to the work we did in Lab 9. </p>
         </div>
     );
 }
