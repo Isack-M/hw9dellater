@@ -122,6 +122,7 @@ const ExoticFishFilterSortTable = () => {
             <table>
                 <thead>
                     <tr>
+                        <th></th>
                         <th onClick={() => sortByProp("fishspecies_name", "text")}>
                             <img src="icons/dark/blackDownSort.png" />Species
                         </th>
@@ -146,6 +147,11 @@ const ExoticFishFilterSortTable = () => {
                     {
                         filteredList.map((listObj) =>
                             <tr key={listObj.exotic_fish_id}>
+                                <td className="textAlignCenter">
+                                    <a href={'#/fishUpdate/:' + listObj.exotic_fish_id}>
+                                        <img src="icons/more_icons/edit.png" style={{ cursor: 'pointer', width: '1.25rem' }} />
+                                    </a>
+                                </td>
                                 <td>{listObj.fishspecies_name}</td>
                                 <td className="shadowImage textAlignCenter"><img src={listObj.image} /></td>
                                 <td className="textAlignRight">{listObj.species_population}</td>

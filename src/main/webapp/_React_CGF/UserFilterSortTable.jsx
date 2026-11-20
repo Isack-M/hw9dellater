@@ -122,6 +122,7 @@ const UserFilterSortTable = () => {
             <table>
                 <thead>
                     <tr>
+                        <th></th>
                         <th onClick={() => sortByProp("userEmail", "text")}>
                             <img src="icons/dark/blackDownSort.png" />Email
                         </th>
@@ -142,6 +143,11 @@ const UserFilterSortTable = () => {
                     {
                         filteredList.map((listObj) =>
                             <tr key={listObj.webUserId}>
+                                <td className="textAlignCenter">
+                                    <a href={'#/userUpdate/' + listObj.webUserId}>
+                                        <img src="icons/more_icons/edit.png" />
+                                    </a>
+                                </td>
                                 <td>{listObj.userEmail}</td>
                                 <td className="shadowImage textAlignCenter"><img src={listObj.userImage} /></td>
                                 <td className="textAlignCenter">{listObj.birthday}</td>

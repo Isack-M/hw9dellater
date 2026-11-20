@@ -94,7 +94,7 @@ const ExoticFishInsertOrUpdate = (props) => {
 
                         if (action === "update") {
                             console.log("Now getting exotic_fish record " + id + " for the update");
-                            ajax_alt("exoticFish/getById?fishId=" + id,
+                            ajax_alt("exoticFish/getById?id=" + id,
                                 function (dbObj) {
                                     if (dbObj.errorMsg.length > 0) {
                                         setErrorObj(setProp(errorObj, "errorMsg", dbObj.errorMsg));
