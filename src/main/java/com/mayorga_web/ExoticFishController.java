@@ -1,6 +1,6 @@
 package com.mayorga_web;
 
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -13,7 +13,7 @@ import view.ExoticFishView;
 @RestController
 public class ExoticFishController {
 
-    @GetMapping(value = "/exoticFish/getAll", produces = "application/json")
+    @RequestMapping(value = "/exoticFish/getAll", produces = "application/json")
     public String allExoticFish() {
 
         StringDataList list = new StringDataList(); // dbError empty, list empty
@@ -26,7 +26,7 @@ public class ExoticFishController {
         return Json.toJson(list); // convert sdl obj to JSON Format and return that.
     }
 
-    @GetMapping(value = "/exoticFish/insert", params = { "jsonData" }, produces = "application/json")
+    @RequestMapping(value = "/exoticFish/insert", params = { "jsonData" }, produces = "application/json")
     public String insert(@RequestParam("jsonData") String jsonInsertData) {
 
         StringData errorMsgs = new StringData();
@@ -57,7 +57,7 @@ public class ExoticFishController {
         return Json.toJson(errorMsgs);
     }
 
-    @GetMapping(value = "/exoticFish/getById", params = {"id" }, produces = "application/json")
+    @RequestMapping(value = "/exoticFish/getById", params = {"id" }, produces = "application/json")
     public String getById(@RequestParam("id") String id) {
         StringData sd = new StringData();
         if (id == null) {
@@ -76,7 +76,7 @@ public class ExoticFishController {
         return Json.toJson(sd);
     }
 
-    @GetMapping(value = "/exoticFish/update", params = { "jsonData" }, produces = "application/json")
+    @RequestMapping(value = "/exoticFish/update", params = { "jsonData" }, produces = "application/json")
     public String update(@RequestParam("jsonData") String jsonInsertData) {
 
         StringData errorData = new StringData();

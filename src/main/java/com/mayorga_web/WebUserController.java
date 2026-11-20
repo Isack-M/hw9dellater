@@ -1,6 +1,5 @@
 package com.mayorga_web;
 
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -78,7 +77,7 @@ public class WebUserController {
         return Json.toJson(sd);
     }
 
-    @GetMapping(value = "/webUser/insert", params = { "jsonData" }, produces = "application/json")
+    @RequestMapping(value = "/webUser/insert", params = { "jsonData" }, produces = "application/json")
     public String insert(@RequestParam("jsonData") String jsonInsertData) {
 
         StringData errorMsgs = new StringData();
@@ -109,7 +108,7 @@ public class WebUserController {
         return Json.toJson(errorMsgs);
     }
 
-    @GetMapping(value = "/webUser/getById", params = { "userId" }, produces = "application/json")
+    @RequestMapping(value = "/webUser/getById", params = { "userId" }, produces = "application/json")
     public String getById(@RequestParam("userId") String userId) {
         StringData sd = new StringData();
         if (userId == null) {
@@ -128,7 +127,7 @@ public class WebUserController {
         return Json.toJson(sd);
     }
 
-    @GetMapping(value = "/webUser/update", params = { "jsonData" }, produces = "application/json")
+    @RequestMapping(value = "/webUser/update", params = { "jsonData" }, produces = "application/json")
     public String update(@RequestParam("jsonData") String jsonInsertData) {
 
         StringData errorData = new StringData();

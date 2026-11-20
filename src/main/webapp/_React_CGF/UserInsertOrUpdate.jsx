@@ -136,7 +136,7 @@ const UserInsertOrUpdate = (props) => {
 
     return (
         <table className="insertArea">
-            <h1>New Web User</h1>
+            <h1>Web User</h1>
             <tbody>
                 <tr>
                     <td>Id</td>

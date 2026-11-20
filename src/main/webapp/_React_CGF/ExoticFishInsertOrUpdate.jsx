@@ -140,7 +140,7 @@ const ExoticFishInsertOrUpdate = (props) => {
 
     return (
         <table className="insertArea">
-            <h1>New Fish</h1>
+            <h1>Exotic Fish</h1>
             <tbody>
                 <tr>
                     <td>Fish ID</td>

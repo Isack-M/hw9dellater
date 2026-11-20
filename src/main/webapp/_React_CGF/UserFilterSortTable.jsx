@@ -144,7 +144,7 @@ const UserFilterSortTable = () => {
                         filteredList.map((listObj) =>
                             <tr key={listObj.webUserId}>
                                 <td className="textAlignCenter">
-                                    <a href={'#/userUpdate/' + listObj.webUserId}>
+                                    <a href={'#/userUpdate/:' + listObj.webUserId}>
                                         <img src="icons/more_icons/edit.png" />
                                     </a>
                                 </td>

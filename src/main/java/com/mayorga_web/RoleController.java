@@ -1,6 +1,6 @@
 package com.mayorga_web;
 
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import dbUtils.*;
@@ -10,7 +10,7 @@ import view.RoleView;
 @RestController
 public class RoleController {
 
-    @GetMapping(value = "/role/getAll", produces = "application/json")
+    @RequestMapping (value = "/role/getAll", produces = "application/json")
     public String allRoles() {
         StringDataList list = new StringDataList(); // dbError empty, list empty
         DbConn dbc = new DbConn();
